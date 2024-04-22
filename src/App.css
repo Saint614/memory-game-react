@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-size: 5.25rem;
-  background: url(C:\Users\ar5fo\Desktop\NucampFolder\WebDev\3-React\memory-game-react\src\app\assets\memory-card-game-background.png) no-repeat center fixed;
+  background: url('/src/app/assets/memory-card-game-background.png') no-repeat center fixed;
   background-size: cover;
   background-color: black;
   color: white;
