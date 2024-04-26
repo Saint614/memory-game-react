@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import GameCard from './Card';
+import Card from '../components/Cards';
 import '../../App.css';
 
 export default function flipCard() {
@@ -10,8 +10,10 @@ export default function flipCard() {
     const [matchedCards, setMatchedCards] = useState({});
     const [moves, setMoves] = useState(0);
 
-    const cards = [GameCard, GameCard, GameCard, GameCard]
-    
+    const cards = [Card, Card, Card, Card];
+
+    // if the cards match, it gives them a matched property of true and used the setFlippedCards function to set flippedCards to an empty array
+    //if not, it turns them back over after the timeout
     const checkForMatch = () => {
         const [first, second] = flippedCards;
         if (cards[first].name === cards[second].name) {
@@ -24,6 +26,8 @@ export default function flipCard() {
         }, 500);
     };
 
+
+    //the effect function runs when the value for flippedCards changes, and when 2 cards are flipped, it calls the check for match function
     useEffect(() => {
         if (flippedCards.length === 2) {
             setTimeout(checkForMatch, 500);
@@ -50,3 +54,4 @@ export default function flipCard() {
 
     console.log(moves);
 }
+
