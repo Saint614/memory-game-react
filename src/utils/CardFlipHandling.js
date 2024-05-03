@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Card from '../components/Cards';
+import Card from '../components/JoshsCard';
 import '../../App.css';
 
 export default function flipCard() {

@@ -1,8 +1,22 @@
 .App {
   text-align: center;
   font-size: 5.25rem;
-  background: url('/src/app/assets/memory-card-game-background.png') no-repeat center fixed;
+  /*background: url('/src/app/assets/memory-card-game-background.png') no-repeat center fixed;*/
   background-size: cover;
   background-color: black;
   color: white;
+}
+
+.gamecard {
+  width: 200px;
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: stretch;
+  gap: 1rem;
 }
