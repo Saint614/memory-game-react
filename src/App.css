@@ -6,12 +6,6 @@
   background-color: black;
   color: white;
 }
-
-.gamecard {
-  width: 200px;
-  position: relative;
-}
-
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -20,3 +14,30 @@
   align-items: stretch;
   gap: 1rem;
 }
+
+.gamecardDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 200px;
+}
+
+.card {
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  will-change: transform, opacity;
+}
+
+.back {
+  background-size: cover;
+  background-image: url(/src/app/assets/cardBack.png);
+}
+
+img {
+  width: 350px;
+  height: 200px;
+}
+
+
