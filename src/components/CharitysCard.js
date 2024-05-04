@@ -19,7 +19,7 @@ const GameCard = ({ card, handleFlippedCards, stopflip}) => {
             <a.div className="card back" 
                     style={{ opacity: opacity.to(o => 1 - o), transform}}/>
             <a.div className="card front"
-                    style={{ opacity, transform, rotateX: '180deg',
+                    style={{ opacity, transform, rotateY: '180deg',
                     }}>
                 <img src={card.image} alt={card.name}/>
             </a.div>

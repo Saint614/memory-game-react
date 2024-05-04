@@ -31,7 +31,7 @@ function GameBoard() {
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
-        console.log(array[0]);
+        console.log(array);
         return array;
     }
 
@@ -85,19 +85,21 @@ function GameBoard() {
                 <h1>Memory Game</h1>                
             </Row>
             <Row className="board">               
-                {cardsArray.map((card) => {
+                {cardsArray.map((card, index) => {
                     return (
-                    <Col><GameCard card={card} key={card.id}
+                    <Col><GameCard card={card} key={index}
+                        id={card.id}
                         handleFlippedCards={handleFlippedCards}
+                        flipped={card === firstCard || card === secondCard || card.matched === true}
                         stopflip={stopFlip}/></Col>  
                     );               
                 })}
             </Row>
             <Row>
                 {matches !== 8 ? (
-                    <div className="Comments">Thanks for playing!</div>
+                    <div className="comments">Thanks for playing!</div>
                 ) : (
-                    <div className="Comments">You won!</div>
+                    <div className="comments">You won!</div>
                 )}
             </Row>
             <Row><button className="button" onClick={NewGame}>New Game</button></Row>            

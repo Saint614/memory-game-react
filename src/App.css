@@ -1,11 +1,7 @@
 .App {
-  height: 100vh;
-  width: 100vw;
   text-align: center;
   font-family: cursive;
-  /*background: url('/src/app/assets/memory-card-game-background.png') no-repeat center fixed;
-  background-size: cover;*/
-  background-color: black;
+  /*background-color: black; passes from index.css*/
   color: white;
 }
 
@@ -18,7 +14,6 @@
   display: flex; 
   flex-direction: row; 
   padding: 10px; 
-  display: flex; 
   justify-content: center; 
   align-items: center; 
 }
@@ -30,7 +25,7 @@ h1 {
 .board {
   display: grid; 
   margin: auto; 
-  margin-top: 3rem; 
+  margin-top: 1rem; 
   grid-template-columns: repeat(4, 1fr); 
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
@@ -41,17 +36,17 @@ h1 {
 
 .comments {
     padding: 0.25rem 1rem; 
-    background-color: orangered;
-    opacity: 0.5;
     margin: auto; 
-    margin-top: 40px; 
+    margin-top: 40px;
+    margin-bottom: 20px;  
     text-align: center; 
     border-radius: 2rem;
-    color: white;
+    color: orangered;
+    font-weight: bolder; 
+    font-size: 1.2rem;
 }
 
 .button {
-  display: flex; 
   align-items: center; 
   justify-content: center; 
   padding: 0.5rem 0.8rem; 
@@ -64,18 +59,31 @@ h1 {
   background-color: orangered; 
   color: white; 
   margin-top: 4px; 
-  margin-left: 50%;
+  margin: auto;
 }
 
 .button:hover {
   border: 2px solid black;
 }
 
+.item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+
+  
+}
+
 .card {
   height: 250px;
-  width: 350px;
-  position: absolute;
+  width: 350px;  
   will-change: transform, opacity;
+  
+}
+
+.front {
+  position: absolute;
 }
 
 img {
