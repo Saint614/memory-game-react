@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
-import { CARDS } from "../app/data/cards"; 
+import { IndexedCardDeck } from "./CardDeck";
 import GameCard from "./CharitysCard";
 import { Row, Col } from "reactstrap";
-
-
-export const CardDeck = [...CARDS, ...CARDS, ...CARDS, ...CARDS];
 
 function ShuffledCardList() {
     const [items, setItems] = useState(() => {
         let initArray = [];
-        for (let i = 0; i < CardDeck.length; i++) {
-            initArray.push(CardDeck[i]);
+        for (let i = 0; i < IndexedCardDeck.length; i++) {
+            initArray.push(IndexedCardDeck[i]);
           }
+        
         return initArray;
+        
     });
     useEffect(() => {
         const intervalId= setInterval(() => {
-            setItems((currItems) => shuffleArray(currItems));
+            setItems((currItems) => shuffleArray(currItems));            
         }, 20000);
 
         return () => {
@@ -35,6 +34,7 @@ function ShuffledCardList() {
           array[currentIndex] = array[randomIndex];
           array[randomIndex] = temporaryValue;
       }
+      console.log(array[0]);
       return array;
     }
     return (
