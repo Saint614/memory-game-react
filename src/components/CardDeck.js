@@ -3,12 +3,13 @@ import { CARDS } from "../app/data/cards";
 const CardDeck = [...CARDS, ...CARDS, ...CARDS, ...CARDS];
 
 const indexArray = (array) => {
-    let index = -1;
+    let id = -1;
     return array.map((item) => {
-        index++;
+        id++;
         return {
             ...item,
-            index: index
+            id: id,
+            matched: false
         };
 
     });
