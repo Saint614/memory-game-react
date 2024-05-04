@@ -1,13 +1,15 @@
 import { IndexedCardDeck } from "./CardDeck";
 import GameCard from "./CharitysCard";
 import { useState, useEffect } from "react";
+import { Row, Col } from "reactstrap";
 
 function GameBoard() {
-    const [cardsArray, setCardsArray] = useState([]);
+    const [cardsArray, setCardsArray] = useState([]);    
     const [firstCard, setFirstCard] = useState(null);
     const [secondCard, setSecondCard] = useState(null);
     const [stopFlip, setStopFlip] = useState(false);
     const [matches, setMatches] = useState(0);
+
 
     function NewGame() {
         const gameArray = shuffleArray(IndexedCardDeck)
@@ -73,36 +75,32 @@ function GameBoard() {
         setStopFlip(false);
     }
 
-
+    useEffect(() => {
+        NewGame();
+    }, []);
 
     return (
         <div className="container">
-            <div className="header">
-                <h1>Memory Game</h1>
-            </div>
-            <div className="board">
-                {
-                    cardsArray.map((item) => (
-                        <GameCard
-                        item={item} key={item.id}
-                        handleFlippedCard={handleFlippedCards}
-                        flipped={
-                            item === firstCard ||
-                            item === secondCard ||
-                            item.matched === true
-                        }
-                        stopflip={stopFlip}
-                        />
-
-                    ))
-                }
-            </div>
-            {matches !== 8 ? (
-                <div className="Comments">Thanks for playing!</div>
-            ) : (
-                <div className="Comments">You won!</div>
-            )}
-            <button className="button" onClick={NewGame}>New Game</button>
+            <Row className="header">
+                <h1>Memory Game</h1>                
+            </Row>
+            <Row className="board">               
+                {cardsArray.map((card) => {
+                    return (
+                    <Col><GameCard card={card} key={card.id}
+                        handleFlippedCards={handleFlippedCards}
+                        stopflip={stopFlip}/></Col>  
+                    );               
+                })}
+            </Row>
+            <Row>
+                {matches !== 8 ? (
+                    <div className="Comments">Thanks for playing!</div>
+                ) : (
+                    <div className="Comments">You won!</div>
+                )}
+            </Row>
+            <Row><button className="button" onClick={NewGame}>New Game</button></Row>            
         </div>
     )
 

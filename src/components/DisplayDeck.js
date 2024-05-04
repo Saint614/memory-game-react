@@ -2,10 +2,9 @@ import { IndexedCardDeck } from "./CardDeck";
 import GameCard from "./CharitysCard";
 import { Row, Col } from "reactstrap";
 
-function NoShuffleCardList() {
-    console.log(IndexedCardDeck);
+function DisplayDeck() {
     return (
-        <Row className="container">
+        <Row className="board">
           {IndexedCardDeck.map((card) => {
             return (
               <Col>
@@ -17,6 +16,4 @@ function NoShuffleCardList() {
     );
 };
 
-
-
-export default NoShuffleCardList;
+export default DisplayDeck;
